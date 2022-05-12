@@ -1,12 +1,12 @@
 //색상과 관련된 상수
 
 $black: #000;
-$asd: #191a20;
-$asd: #3f4150;
-$asd: #8c8d96;
-$asd: #b2b3b9;
-$asd: #e0e2e7;
-$asd: #f7f8fa;
+$dark: #191a20; //중요한 의미의 컨텐츠 색 (로고,헤딩)
+$primary: #3f4150; //보통의 색
+$primary-second: #8c8d96; //priimay 보다 덜 중요한 색
+$tertiary: #b2b3b9; //plceholder 등 작은정보 / 텍스트를 나타내기 위해 사용되는 색 (~의 몇분전)
+$border: #e0e2e7; //보통 백그라운드 색보다 진하면 보더로 사용됨
+$background: #f7f8fa; //배경색
 $white: #fff;
 
 $blue: #3da5f5;
