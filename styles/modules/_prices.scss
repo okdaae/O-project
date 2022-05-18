@@ -69,6 +69,7 @@
     letter-spacing: 0.01em;
     text-decoration: line-through;
   }
+
   .currency {
     @include text-style(14);
     font-weight: 400;
