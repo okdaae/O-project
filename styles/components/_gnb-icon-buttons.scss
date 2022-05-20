@@ -22,10 +22,10 @@
 
   .bedge {
     position: absolute;
+    min-width: 16px;
     top: 0;
     right: 0;
     display: block; //인라인-블록
-    min-width: 16px;
     padding: 0 4px;
     height: 16px;
     font-size: 10px;
