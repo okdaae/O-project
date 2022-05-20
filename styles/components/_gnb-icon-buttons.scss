@@ -1,10 +1,12 @@
 .gnb-icon-button {
   @include flexbox;
+  position: relative;
   width: 32px;
   height: 32px;
   font-size: 24px;
   color: $primary-second;
-  transition: color 200ms ease-in-out;
+  border-radius: 50%;
+  transition: color 200ms ease-in-out, background-color 200ms ease-in-out;
 
   &.is-menu {
     color: $blue;
@@ -16,5 +18,29 @@
 
   &:active {
     color: $primary;
+  }
+
+  .bedge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block; //인라인-블록
+    min-width: 16px;
+    padding: 0 4px;
+    height: 16px;
+    font-size: 10px;
+    line-height: 16px;
+    letter-spacing: -0.01em;
+    background-color: $red;
+    text-align: center;
+    border-radius: 1000px;
+    color: $white;
+  }
+
+  @include responsive(T) {
+    &:hover {
+      color: $white;
+      background-color: $blue;
+    }
   }
 }
