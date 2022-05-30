@@ -53,8 +53,8 @@
     }
 
     &::after {
-      border-bottom-color: $white;
       top: -($tooltip-size * 2 - 2);
+      border-bottom-color: $white;
     }
   }
 
