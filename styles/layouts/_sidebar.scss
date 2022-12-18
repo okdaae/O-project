@@ -1,10 +1,18 @@
 body {
-  background-color: black;
+  // background-color: black;
 }
 .sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 240px;
+  height: 100vh;
   padding: 32px 20px;
+  overflow: auto; //스크롤을 주기위함
+  z-index: $sidebar-level;
   background-color: $white;
+  overscroll-behavior: contain; //overlay 간섭 막기.
+
   &-header {
     padding: 0 12px;
 
@@ -89,5 +97,9 @@ body {
         }
       }
     }
+  }
+  /*스크롤바 없애기 위한 가상선택자 클래스 생성*/
+  &::-webkit-scrollbar {
+    display: none;
   }
 }
