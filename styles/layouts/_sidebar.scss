@@ -1,17 +1,25 @@
 body {
   // background-color: black;
 }
+
 .sidebar {
+  $sidebar-width: 240px; //변수설정
   position: fixed;
   top: 0;
   left: 0;
-  width: 240px;
+  z-index: $sidebar-level;
+  width: $sidebar-width;
   height: 100vh;
   padding: 32px 20px;
   overflow: auto; //스크롤을 주기위함
-  z-index: $sidebar-level;
+  transform: translate3d(-#{$sidebar-width}, 0, 0); //sidebar 숨기기
+  transition: transform 300ms ease-in-out;
   background-color: $white;
   overscroll-behavior: contain; //overlay 간섭 막기.
+
+  &.is-active {
+    transform: translate3d(0, 0, 0); //sidebar 원위치로 고정
+  }
 
   &-header {
     padding: 0 12px;
