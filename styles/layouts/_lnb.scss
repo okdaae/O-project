@@ -1,0 +1,38 @@
+/*시작은 타이포그래피 먼저*/
+.lnb {
+  overflow-x: auto; //320px 보다 더 긴 요소
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &-list {
+    @include inline-flexbox(start);
+    position: relative;
+    left: -8px;
+    white-space: nowrap; //한 줄 차지
+    //첫번째방법, width: max-content;
+  }
+  &-item {
+    /*&-list에 의해 찌뿌된 사이즈 원상복귀*/
+    // flex-shrink: 0;
+
+    &.is-active {
+      a {
+        color: $blue;
+        border-bottom: 2px solid $blue;
+      }
+    }
+
+    a {
+      @include inline-flexbox;
+      @include text-style(13, $dark);
+      padding: 0 8px;
+      height: 40px;
+      font-weight: 700;
+    }
+
+    .ic-new {
+      color: $red;
+    }
+  }
+}
