@@ -4,9 +4,7 @@
   $grid-margin: $sm-margin + $gutter / 2;
   overflow-x: auto; //320px 보다 더 긴 요소
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  @include no-scrollbar;
   &-list {
     @include inline-flexbox(start);
     height: 40px;
