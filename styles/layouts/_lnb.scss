@@ -1,5 +1,7 @@
 /*시작은 타이포그래피 먼저*/
 .lnb {
+  $lnb-link-padding: 8px;
+  $grid-margin: $sm-margin + $gutter / 2;
   overflow-x: auto; //320px 보다 더 긴 요소
 
   &::-webkit-scrollbar {
@@ -7,11 +9,13 @@
   }
   &-list {
     @include inline-flexbox(start);
-    position: relative;
-    left: -8px;
+    height: 40px;
+    padding: 0 #{$grid-margin - $lnb-link-padding};
+    margin-left: -#{$grid-margin}; //15px 만큼 앞으로 움직이기
     white-space: nowrap; //한 줄 차지
-    //첫번째방법, width: max-content;
+    border-bottom: 1px solid $border;
   }
+
   &-item {
     /*&-list에 의해 찌뿌된 사이즈 원상복귀*/
     // flex-shrink: 0;
@@ -19,20 +23,17 @@
     &.is-active {
       a {
         color: $blue;
-        border-bottom: 2px solid $blue;
+        border-bottom-color: $blue;
       }
     }
 
     a {
       @include inline-flexbox;
       @include text-style(13, $dark);
-      padding: 0 8px;
       height: 40px;
+      padding: $lnb-link-padding;
       font-weight: 700;
-    }
-
-    .ic-new {
-      color: $red;
+      border-bottom: 2px solid transparent; //active가 되어있지 않으면 투명하게 변경
     }
   }
 }
