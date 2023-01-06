@@ -1,5 +1,7 @@
 /*시작은 타이포그래피 먼저*/
 .lnb {
+  $lnb-height-sm: 40px;
+  $lnb-height-md: 50px;
   $lnb-link-padding: 8px;
   $grid-margin: $sm-margin + $gutter / 2;
   overflow-x: auto; //320px 보다 더 긴 요소
@@ -7,7 +9,7 @@
   @include no-scrollbar;
   &-list {
     @include inline-flexbox(start);
-    height: 40px;
+    height: $lnb-height-sm;
     padding: 0 #{$grid-margin - $lnb-link-padding};
     margin-left: -#{$grid-margin}; //15px 만큼 앞으로 움직이기
     white-space: nowrap; //한 줄 차지
@@ -28,10 +30,32 @@
     a {
       @include inline-flexbox;
       @include text-style(13, $dark);
-      height: 40px;
+      height: $lnb-height-sm;
       padding: $lnb-link-padding;
       font-weight: 700;
       border-bottom: 2px solid transparent; //active가 되어있지 않으면 투명하게 변경
+
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+  @include responsive(T) {
+    border-bottom: 1px solid $border;
+    overflow-x: visible;
+    height: $lnb-height-md;
+    &-list {
+      height: auto;
+      padding: 0;
+      margin-left: 0;
+      border-bottom: 0;
+    }
+
+    &-item {
+      a {
+        @include text-style(14);
+        height: $lnb-height-md;
+      }
     }
   }
 }
